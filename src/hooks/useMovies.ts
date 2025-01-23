@@ -1,6 +1,6 @@
 // src/hooks/useMovies.ts
 import { useState, useEffect, useCallback } from "react";
-import { fetchMovies } from "../services/movieService"; // Aqui é onde você importa o serviço
+import { fetchMovies } from "@/services/movieService";
 
 const useMovies = (
   searchQueryParam: string,

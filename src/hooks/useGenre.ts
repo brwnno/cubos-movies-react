@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { fetchGenres } from "../services/genreService";
+import { fetchGenres } from "@/services/genreService";
 
 const useGenre = () => {
   const [genre, setGenre] = useState<any[]>([]);
