@@ -1,0 +1,94 @@
+.filters-container {
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 4px;
+  width: 60%;
+  background: rgba(183, 68, 247, 0.0784313725);
+  position: relative;
+  z-index: 9999;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #eeeeee;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+
+    .filter-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #eeeeee;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 12.8px;
+      line-height: 15.6px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #333;
+      color: #fff;
+
+      &:focus {
+        border-color: #8e4ec6;
+        outline: none;
+      }
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      background-color: #b744f714;
+      border-radius: 4px;
+    }
+  }
+
+  button.apply-filters-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #8e4ec6;
+    color: #eeeeee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #9a5cd0;
+    }
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+  }
+
+  @media (max-width: 768px) {
+    .filters-container {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .filters-container {
+      width: 100%;
+    }
+
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

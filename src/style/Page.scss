@@ -1,0 +1,67 @@
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  @media (min-width: 320px) {
+    min-width: 320px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  //height: 544px;
+}
+
+picture {
+  display: block;
+  img {
+    display: block;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #121113;
+  position: relative;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.overlayBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      to right,
+      rgba(18, 17, 19, 0.95),
+      rgba(18, 17, 19, 0.75) 80%,
+      rgba(18, 17, 19, 0.5) 100%
+    ),
+    url("/img/backgropund-krists-luhaers-unsplash.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50%;
+  width: 100%;
+}

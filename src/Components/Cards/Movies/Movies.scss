@@ -1,0 +1,203 @@
+.cards {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  justify-items: center;
+  align-items: start;
+  gap: 2rem;
+  position: relative;
+
+  .background {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    background: rgba(235, 234, 248, 0.0784313725);
+    padding: 1.5rem;
+    border-radius: 4px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .card {
+    display: grid;
+    gap: 1.5rem;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .card-image {
+      position: relative;
+
+      img {
+        object-fit: cover;
+        border-radius: 4px;
+        width: 100%;
+
+        @media (min-width: 768px) {
+          aspect-ratio: 2/3;
+        }
+
+        @media (max-width: 768px) {
+          aspect-ratio: 2 / 4;
+        }
+      }
+
+      .hover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+
+        .rating-container {
+          display: grid;
+          place-items: center;
+          margin-bottom: 10px;
+
+          .circle {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            opacity: 0;
+            display: grid;
+            place-items: center;
+
+            @media (max-width: 768px) {
+              width: 98px;
+              height: 98px;
+            }
+
+            .progress {
+              width: 100%;
+              height: 100%;
+              transform: rotate(360deg);
+              transform-origin: center;
+            }
+
+            .bg {
+              fill: none;
+              stroke: #ffffff45;
+              stroke-width: 1.8;
+            }
+
+            .progress-bar {
+              fill: none;
+              stroke: #ffe000;
+              stroke-width: 1.8;
+              stroke-linecap: round;
+            }
+
+            .percentage {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: #ffe000;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 24px;
+              text-align: center;
+              font-family: "Montserrat", sans-serif;
+
+              small {
+                font-size: 14px;
+                line-height: 14px;
+                font-weight: 600;
+                color: #eeeeee;
+              }
+            }
+          }
+        }
+
+        .text-overlay {
+          padding: 0 1rem;
+          position: relative;
+          h3 {
+            color: #eeeeee;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+
+            @media (min-width: 768px) {
+              font-family: "Montserrat", sans-serif;
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 19.5px;
+            }
+
+            @media (max-width: 768px) {
+              font-family: "Montserrat", sans-serif;
+              font-weight: 400;
+              font-size: 12.8px;
+              line-height: 15.6px;
+            }
+          }
+
+          .genre {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.075rem;
+
+            p {
+              color: #b4b4b4;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+
+              @media (min-width: 768px) {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 12.8px;
+                line-height: 15.6px;
+              }
+
+              @media (max-width: 768px) {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 400;
+                font-size: 12.8px;
+                line-height: 15.6px;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 4px;
+          .rating-container {
+            .circle {
+              background: rgba(0, 0, 0, 0.8);
+              opacity: 1;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+
+          .text-overlay {
+            p {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
